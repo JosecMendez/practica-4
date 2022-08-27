@@ -1,2 +1,2 @@
-# practica-4
+# practicas de python
 ejercicios de python
