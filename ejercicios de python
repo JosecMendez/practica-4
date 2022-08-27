@@ -1,9 +1,8 @@
-# #Ejercicio1
- 
 from operator import truediv
 from random import randint
 from statistics import median
- 
+
+#Ejercicio1
 lista1 = []
 for i in range(10):
     lista1.append(randint(1,10))
@@ -11,17 +10,7 @@ print(lista1)
 for i in lista1:
     print(i, i**2, i**3)
 print()
- 
-# #Ejercicio2
-lista2 = []
-for i in range(5):
-    palabra = input("Agregue una palabra: ")
-    lista2.append(palabra)
-print(lista2)
-lista2.reverse()
-print(lista2)
-print()
- 
+
 #Ejercicio3
 lista3 = []
 for i in range(5):
@@ -34,42 +23,37 @@ print(lista3)
 print(f"La media es: {median(lista3)}, La maxima es: {max(lista3)}, La minima es: {min(lista3)}")
 print()
  
-#Ejercicio4
-n = int(input("cuantos alumnos son: "))
-diccionario = {}
-for i in range(1,n + 1):
-    nombre = input("Ingresa el nombre del alumno: ")
-    for i in diccionario:
-        while nombre in diccionario:
-            print("Ya esta ese alumno en lista")           
-    nota = int(input("cuantas notas tiene el alumno: "))
-    lista_notas = []
-    for i in range(1,nota + 1):
-        calif = float(input("Ingresa calificación: "))
-        if calif >= 0:
-            lista_notas.append(calif)
-            diccionario[nombre] = lista_notas
-        else:
-            print("calificación incorrecta")
-print(diccionario)
+#Ejercicio2
+lista2 = []
+for i in range(5):
+    palabra = input("Agregue una palabra: ")
+    lista2.append(palabra)
+print(lista2)
+lista2.reverse()
+print(lista2)
 print()
 
-#Ejercicio 4.1
-#diccionario = {}
-#salir = False
-#alumnos = int(input("Cuántos alumnos son: "))
-#for i in range(1,alumnos + 1):
-    #nombre = input("ingresa el nombre del alumno: ")
-    #lista = []    
-    #while not salir:
-        #notas = float(input("digite nota: "))
-        #if notas < 0:
-            #salir = True
-        #else:
-            #lista.append(notas)
-            #diccionario[nombre] = lista
-#print(diccionario)
-#print()
+#Ejercicio 4
+diccionario = {}
+alumnos = int(input("Cuántos alumnos son: "))
+for i in range(1,alumnos + 1):
+    nombre = input("ingresa el nombre del alumno: ")
+    while nombre in diccionario:
+        print("El usuario ya esta en la lista")
+        nombre = input("ingresa el nombre del alumno: ")
+    lista = []    
+    nota = float(input("ingrese una nota: "))
+    while nota >= 0:
+        lista.append(nota)
+        nota = float(input("ingrese una nota: "))
+    diccionario[nombre] = lista
+for i,j in diccionario.items():
+    print(i)
+    print(j)
+    longitud = len(j)
+    promedio = sum(j)/longitud
+    print(i,"Su promedio es: ", promedio)
+print()
 
 #Ejercicio5
 meses = ("Mes", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Sept", "Oct", "Nov", "Dic")
