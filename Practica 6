@@ -1,5 +1,7 @@
 from cmath import sqrt
 import math
+import os
+
 #Ejercicio1
 print("Ejercicio 1")
 
@@ -33,23 +35,6 @@ while True:
         a = float(input("Ingrese numero: "))
         b = float(input("ingrese otro numero: "))
         print(multiplicacion(a,b))
-       
-#Ejercicio2
-num = int(input("ingresa un numero para saber si es primo: "))
-
-def es_primo(num):
-    if num < 2:
-        print(f"{num} No es primo")
-        return False 
-
-    for i in range(2, num):   
-        if num % i == 0:
-            print(f"{num} No es primo")
-            return False
-    print(f"{num} Es primo")
-    return True
-
-print(es_primo(num))  
 
     elif menu == 2:
         a = float(input("Ingrese numero: "))
@@ -83,3 +68,26 @@ def es_primo(num):
     return True
 
 print(es_primo(num))
+print(p)
+
+#Ejercicio3
+total = 0
+for i in range (1, 21):
+    print ('PROCESO ' + repr (i))
+    if i==1:
+        pago=10
+    else:
+        pago=pago*2
+    total=total+pago
+    print ('Valor de pago: ' + repr (pago))
+    print ()
+print ('Valor de total: ' + repr (total))
+os.system ('pause')
+
+#Ejercicio4
+def factorial(n):
+   if n==0 or n==1:
+            resultado=1
+   elif n>1:
+            resultado=n*factorial(n-1)
+   return resultado
