@@ -11,18 +11,41 @@ def cubo(a):
     return a**3
 def division(a,b):
     return a/b
-
-while True:
-    while menu < 1 and menu > 5:
-        menu = input(''' ..:Bienvenido:..
+menu = int(input(''' ..:Bienvenido:..
                 DIGITE UNA OPCIÓN:
                 1.- Multiplicación de dos numeros
                 2.- Raiz cuadrada de un numeros
                 3.- Cubo de un numero
                 4.- División de dos numeros
                 5.- Salir
-''')
+'''))
+while True:
+    while menu >= 1 and menu <= 5:
+        menu = int(input(''' ..:Bienvenido:..
+                DIGITE UNA OPCIÓN:
+                1.- Multiplicación de dos numeros
+                2.- Raiz cuadrada de un numeros
+                3.- Cubo de un numero
+                4.- División de dos numeros
+                5.- Salir
+'''))
     if menu == 1:
         a = float(input("Ingrese numero: "))
         b = float(input("ingrese otro numero: "))
         print(multiplicacion(a,b))
+
+    elif menu == 2:
+        a = float(input("Ingrese numero: "))
+        print(raiz(a))
+
+    elif menu == 3:
+        a = float(input("Ingrese numero: "))
+        print(cubo(a))
+
+    elif menu == 4:
+        a = float(input("Ingrese numero: "))
+        b = float(input("ingrese otro numero: "))
+        print(division(a,b))
+
+    elif menu == 5:
+        break
