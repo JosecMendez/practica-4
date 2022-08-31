@@ -66,3 +66,20 @@ print(es_primo(num))
 
     elif menu == 5:
         break
+        
+#Ejercicio2
+num = int(input("ingresa un numero para saber si es primo: "))
+
+def es_primo(num):
+    if num < 2:
+        print(f"{num} No es primo")
+        return False 
+
+    for i in range(2, num):   
+        if num % i == 0:
+            print(f"{num} No es primo")
+            return False
+    print(f"{num} Es primo")
+    return True
+
+print(es_primo(num))
