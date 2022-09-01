@@ -1,55 +1,61 @@
 from cmath import sqrt
-import math
-
+import cmath
+import sys
 #Ejercicio1
 print("Ejercicio 1")
-
-def multiplicacion(a,b):
-    return a*b
-def raiz(a):
-    return math.sqrt(a**2)
-def cubo(a):
-    return a**3
-def division(a,b):
-    return a/b
-menu = int(input(''' ..:Bienvenido:..
+n1 = 0
+n2 = 0
+menu = ''' ..:Bienvenido:..
                 DIGITE UNA OPCIÓN:
                 1.- Multiplicación de dos numeros
-                2.- Raiz cuadrada de un numeros
+                2.- Raiz cuadrada de un numero
                 3.- Cubo de un numero
                 4.- División de dos numeros
                 5.- Salir
-'''))
+'''
+def multiplicacion():
+    n1 = float(input("Ingrese numero: "))
+    n2 = float(input("ingrese otro numero: "))
+    print(f"El resultado es {n1*n2} ")
+    print()
+    return n1*n2
+
+def raiz():
+    n1 = float(input("Ingrese numero: "))
+    print(f"El resultado es {cmath.sqrt(n1**2)} ")
+    print()
+    return cmath.sqrt(n1**2)
+
+def cubo():
+    n1 = float(input("Ingrese numero: "))
+    print(f"El resultado es {n1**3} ")
+    print()
+    return n1**3
+
+def division():
+    n1 = float(input("Ingrese numero: "))
+    n2 = float(input("ingrese otro numero: "))
+    print(f"El resultado es {n1/n2} ")
+    print()
+    return n1/n2
+
 while True:
-    while menu >= 1 and menu <= 5:
-        menu = int(input(''' ..:Bienvenido:..
-                DIGITE UNA OPCIÓN:
-                1.- Multiplicación de dos numeros
-                2.- Raiz cuadrada de un numeros
-                3.- Cubo de un numero
-                4.- División de dos numeros
-                5.- Salir
-'''))
-    if menu == 1:
-        a = float(input("Ingrese numero: "))
-        b = float(input("ingrese otro numero: "))
-        print(multiplicacion(a,b))
+    print(menu)
+    opc = int(input())
+    if opc == 1:
+        multiplicacion()
 
-    elif menu == 2:
-        a = float(input("Ingrese numero: "))
-        print(raiz(a))
+    elif opc == 2:
+        raiz()
 
-    elif menu == 3:
-        a = float(input("Ingrese numero: "))
-        print(cubo(a))
+    elif opc == 3:
+        cubo()
 
-    elif menu == 4:
-        a = float(input("Ingrese numero: "))
-        b = float(input("ingrese otro numero: "))
-        print(division(a,b))
+    elif opc == 4:
+        division()
 
-    elif menu == 5:
-        break
+    elif opc == 5:
+        sys.exit()
         
 #Ejercicio2
 num = int(input("ingresa un numero para saber si es primo: "))
@@ -84,9 +90,11 @@ print ('Valor de total: ' + repr (total))
 print()
 
 #Ejercicio4
-def factorial(n):
+n = float(input("ingresa un numero para darte el factorial: "))
+def factorial():
    if n==0 or n==1:
             resultado=1
    elif n>1:
-            resultado=n*factorial(n-1)
-   return resultado
+        resultado = n*factorial(n-1)
+        return resultado
+print(f"El factorial es: {factorial()} ")
