@@ -1,6 +1,5 @@
 from cmath import sqrt
 import math
-import os
 
 #Ejercicio1
 print("Ejercicio 1")
@@ -73,7 +72,7 @@ print(p)
 #Ejercicio3
 total = 0
 for i in range (1, 21):
-    print ('PROCESO ' + repr (i))
+    print ('Mes' + repr (i))
     if i==1:
         pago=10
     else:
@@ -82,7 +81,7 @@ for i in range (1, 21):
     print ('Valor de pago: ' + repr (pago))
     print ()
 print ('Valor de total: ' + repr (total))
-os.system ('pause')
+print()
 
 #Ejercicio4
 def factorial(n):
