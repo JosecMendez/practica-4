@@ -1,6 +1,8 @@
 from cmath import sqrt
 import cmath
-import sys
+
+#1.-Realizar un menú, donde podemos escoger las distintas opciones de operaciones (multiplicación de dos números, raiz cuadrada de un número, cubo de un número y división de dos números) hasta que seleccionamos la opción de “Salir”.
+
 #Ejercicio1
 print("Ejercicio 1")
 n1 = 0
@@ -22,9 +24,9 @@ def multiplicacion():
 
 def raiz():
     n1 = float(input("Ingrese numero: "))
-    print(f"El resultado es {cmath.sqrt(n1**2)} ")
+    print(f"El resultado es {cmath.sqrt(n1)} ")
     print()
-    return cmath.sqrt(n1**2)
+    return cmath.sqrt(n1)
 
 def cubo():
     n1 = float(input("Ingrese numero: "))
@@ -55,8 +57,9 @@ while True:
         division()
 
     elif opc == 5:
-        sys.exit()
-        
+        break
+
+#2.-Pedir al usuario y determinar si el número ingresado es primo o no.
 #Ejercicio2
 num = int(input("ingresa un numero para saber si es primo: "))
 
@@ -75,6 +78,7 @@ def es_primo(num):
 print(es_primo(num))
 print(p)
 
+#3.-Una persona adquirió un producto para pagar en 20 meses. El primer mes pagó 10 €, el segundo 20 €, el tercero 40 € y así sucesivamente. Realizar un programa para determinar cuánto debe pagar mensualmente y el total de lo que pagó hasta los 20 meses.
 #Ejercicio3
 total = 0
 for i in range (1, 21):
@@ -89,12 +93,16 @@ for i in range (1, 21):
 print ('Valor de total: ' + repr (total))
 print()
 
-#Ejercicio4
-n = float(input("ingresa un numero para darte el factorial: "))
-def factorial():
-   if n==0 or n==1:
-            resultado=1
-   elif n>1:
-        resultado = n*factorial(n-1)
-        return resultado
-print(f"El factorial es: {factorial()} ")
+#4.-Crea un programa que pida un número y calcule su factorial (El factorial de un número es el producto de todos los enteros entre 1 y el propio número y se representa por el número seguido de un signo de exclamación. Por ejemplo 5! = 1x2x3x4x5=120).
+# Ejercicio 4
+print("ejercicio 4")
+numero = int(input("digite un numero: "))
+while numero<0:
+    print("Digite un numero positivo")
+    numero = int(input("digite un numero: "))
+
+factorial = 1
+
+for i in range (1,numero+1):
+    factorial *= i 
+print(f"el factorial del numero {numero}! es {factorial}")
